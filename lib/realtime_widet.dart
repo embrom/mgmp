@@ -27,7 +27,7 @@ class _RealTimeWidetState extends State<RealTimeWidet>
             .snapshots(),
         builder: (context, ketua) {
           if (ketua.connectionState == ConnectionState.waiting) {
-            return Text('$path: -');
+            return Text('$path: ---');
           }
 
           if (formasi == 'K') {

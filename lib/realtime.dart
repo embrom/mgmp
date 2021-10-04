@@ -17,18 +17,16 @@ class RealTime extends StatelessWidget {
                   color: Colors.blue,
                   backgroundColor: Colors.blue.shade900,
                 ))
-              : Scrollbar( 
-                child: SingleChildScrollView(
-                    child: Column(
-                      children: snapshot.data!.docs.map(
-                        (e) {
-                        
-                          return RealTimeWidet(e.data());
-                        },
-                      ).toList(),
-                    ),
+              : SingleChildScrollView(
+                  child: Column(
+                    children: snapshot.data!.docs.map(
+                      (e) {
+                      
+                        return RealTimeWidet(e.data());
+                      },
+                    ).toList(),
                   ),
-              ),
+                ),
     );
   }
 }

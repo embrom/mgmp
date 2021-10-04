@@ -128,7 +128,7 @@ Widget _loading()=>Flexible(
                 topRight: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20))),
-        height: MediaQuery.of(context).size.height * 0.23,
+        height: MediaQuery.of(context).size.height * 0.2,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -137,7 +137,7 @@ Widget _loading()=>Flexible(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20))),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Center(
                 child: Text(
