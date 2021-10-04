@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "606956961640",
+    "project_id": "mgmp-90fe9",
+    "storage_bucket": "mgmp-90fe9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606956961640:android:8dafc8765bef8867a2e0dd",
+        "android_client_info": {
+          "package_name": "com.example.mgmp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606956961640-r3s5ovpge82p9s145c155dub1dkssq4t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mgmp",
+            "certificate_hash": "1315de700c7612e0742640db2fbebc920005ceef"
+          }
+        },
+        {
+          "client_id": "606956961640-8a1olhkcprus311i6k0embsju9d02qom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALFnedgo7wAvG4oaQB1JU7X2S-uxjcMhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606956961640-8a1olhkcprus311i6k0embsju9d02qom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
