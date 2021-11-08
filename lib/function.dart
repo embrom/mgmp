@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-
+// import 'package:firebase_database/firebase_database.dart';
 import 'package:mgmp/klasmen_model.dart';
 import 'package:mgmp/model_data.dart';
 
@@ -29,6 +28,21 @@ class Fungsi extends ChangeNotifier {
   Klasmen? sekretasris;
   Klasmen? bendahara;
   List<Klasmen> klasmens = [];
+  // uplload() async {
+  //   List<Map<String, dynamic>> asu = [];
+  //   for (var item in klasmens) {
+  //     var data = {
+  //       'Nama': item.nama,
+  //       'Sma': item.sma,
+  //       'Ketua': item.ketua,'Sekretaris':item.ketua,'Bendahara': item.bendahara,
+  //       "Wa":item.wa.toString(),
+  //       'Kode': item.kode.toString()
+  //     };
+  //     asu.add(data);
+     
+  //   } await FirebaseDatabase.instance.reference().child('Respondend').set(asu);
+  // }
+
   getData() async {
     print('getData');
     QuerySnapshot<Map<String, dynamic>> realData =
@@ -80,7 +94,7 @@ class Fungsi extends ChangeNotifier {
       return;
     }
     if (firebaseData.every((element) => element.kode != kode || kode == null)) {
-      print('ckeko kode');
+      print('ckeko kodeddd');
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           duration: Duration(seconds: 1),
           backgroundColor: Colors.red,
@@ -209,7 +223,9 @@ class Fungsi extends ChangeNotifier {
       klasmens[temp].bendahara = vote;
       klasmens.sort((a, b) => a.bendahara!.compareTo(b.bendahara!));
       bendahara = klasmens.last;
-
+      if (bendahara!.nama == sekretasris!.nama) {
+        bendahara = klasmens.reversed.toList()[1];
+      }
       notifyListeners();
     }
   }

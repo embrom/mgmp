@@ -39,7 +39,7 @@ class DropDown extends StatelessWidget {
       }
 
       return Container(
-        margin: EdgeInsets.all(20),decoration: BoxDecoration(
+        margin: EdgeInsets.all(5),decoration: BoxDecoration(
                   color: Colors.blue.shade900,
                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5), bottomRight: Radius.circular(5),
                       topLeft: Radius.circular(5),

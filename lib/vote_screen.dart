@@ -19,52 +19,15 @@ class _VoteScreenState extends State<VoteScreen> {
     return Scaffold(
         floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: Container(
-          decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10), topRight: Radius.circular(10))),
-          child: TextField(
-            controller: _controller,
-            keyboardType: TextInputType.number,
-            textAlign: TextAlign.center,
-            decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    gapPadding: 2,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10))),
-                alignLabelWithHint: true,
-                labelText: 'Silahkan Masukan Kode........',
-                hintText: 'dd/mm/yyyy || cth: 25012005',
-                labelStyle: TextStyle()),
-            onChanged: (s) {
-              setState(() {
-                if (s.isNotEmpty) {
-                  kode = int.parse(s);
-                }
-              });
-            },
-          ),
-        ),
-        body: Wrap(
-          crossAxisAlignment: WrapCrossAlignment.center,
-          alignment: WrapAlignment.center,
-          
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-                margin: EdgeInsets.only(top: 20),
-                child: Text(
-                  'Voting MGMP Sragen 2021/2022',
-                  style: TextStyle(fontSize: 23),
-                )),
-            DropDown('Ketua'),
-            DropDown('Sekretaris'),
-            DropDown('Bendahara'),
             Container(
               margin: EdgeInsets.only(top: 20),
               child: ElevatedButton(
-                  style: ButtonStyle( shadowColor:   MaterialStateProperty.all(Colors.yellow.shade600),
+                  style: ButtonStyle(
+                      shadowColor:
+                          MaterialStateProperty.all(Colors.yellow.shade600),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
@@ -79,8 +42,7 @@ class _VoteScreenState extends State<VoteScreen> {
                     setState(() {
                       _loading = true;
                     });
-                    await Provider.of<Fungsi>(context, listen: false)
-                        .submitVote(kode, context);
+                    // await Provider.of<Fungsi>(context, listen: false).uplload();
                     setState(() {
                       _controller.clear();
                       _loading = false;
@@ -94,6 +56,44 @@ class _VoteScreenState extends State<VoteScreen> {
                     ),
                   )),
             ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10))),
+              child: TextField(
+                controller: _controller,
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        gapPadding: 2,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10))),
+                    alignLabelWithHint: true,
+                    labelText: 'Silahkan Masukan Kode........',
+                    hintText: 'dd/mm/yyyy || cth: 25012005',
+                    labelStyle: TextStyle()),
+                onChanged: (s) {
+                  setState(() {
+                    if (s.isNotEmpty) {
+                      kode = int.parse(s);
+                    }
+                  });
+                },
+              ),
+            ),
+          ],
+        ),
+        body: Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          alignment: WrapAlignment.center,
+          children: [
+            DropDown('Ketua'),
+            DropDown('Sekretaris'),
+            DropDown('Bendahara'),
           ],
         ));
   }

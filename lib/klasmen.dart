@@ -6,7 +6,7 @@ import 'covert_string.dart';
 import 'function.dart';
 
 class KlasmenWidget extends StatelessWidget {
-  const KlasmenWidget({Key? key}) : super(key: key);
+  const   KlasmenWidget({Key? key}) : super(key: key);
 Widget _loading()=>Flexible(
       child: Card(
         shape: RoundedRectangleBorder(
@@ -142,7 +142,7 @@ Widget _loading()=>Flexible(
               Center(
                 child: Text(
                   'Klasmen Terkini',
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(fontSize: 27),
                 ),
               ),
               Row(

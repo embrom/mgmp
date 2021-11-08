@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:mgmp/function.dart';
 import 'package:mgmp/tab_screen.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(theme: ThemeData(
-        fontFamily: GoogleFonts.nunito().fontFamily,
+        fontFamily: 'Nunito',
            ),
       debugShowCheckedModeBanner: false,
       title: 'Pemilihan MGMP',
