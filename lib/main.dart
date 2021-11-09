@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Nunito',
            ),
       debugShowCheckedModeBanner: false,
-      title: 'Pemilihan MGMP',
+      title: 'Pemilihan MGMP2',
       
       home: const MyHomePage(),
     );
